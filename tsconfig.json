@@ -6,8 +6,14 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "outDir": "dist",
-    "rootDir": "src"
+    "rootDir": "./src"
   },
-  "include": ["src/**/*"],
+  "include": [
+    "src/**/*",
+    "models",
+    "index.ts",
+    "migrations",
+    "create-database.ts"
+  ],
   "exclude": ["node_modules"]
 }

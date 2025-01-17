@@ -4,7 +4,10 @@
   "description": "Text Analyzer Tool",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "setup": "ts-node ./create-database.ts",
+    "start": "ts-node ./src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clear": "npx sequelize-cli db:migrate:undo:all"
   },
   "keywords": [],
   "author": "",
