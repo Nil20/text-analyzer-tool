@@ -4,6 +4,7 @@ import {
   getNumberOfSentences,
   getNumberOfParagraphs,
   getLongestWordsInParagraph,
+  validateContent,
 } from './utils';
 
 const demoString =
@@ -29,5 +30,17 @@ describe('Text Analysis Functions', () => {
   test('getLongestWordsInParagraph should return the longest word in each paragraph', () => {
     expect(getLongestWordsInParagraph(demoString).length).toEqual(1);
     expect(getLongestWordsInParagraph(demoString)[0].length).toEqual(5);
+  });
+
+  test('validateContent should return true for valid content', () => {
+    expect(validateContent(demoString)).toBe(true);
+  });
+
+  test('validateContent should return false for empty string', () => {
+    expect(validateContent('')).toBe(false);
+  });
+
+  test('validateContent should return false for a number', () => {
+    expect(validateContent(123)).toBe(false);
   });
 });

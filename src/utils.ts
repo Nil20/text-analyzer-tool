@@ -22,3 +22,7 @@ export function getLongestWordsInParagraph(content: string): string[] {
   );
   return longestWords;
 }
+
+export function validateContent(content: any) {
+  return typeof content === 'string' && content.trim() !== '';
+}
