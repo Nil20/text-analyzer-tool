@@ -4,10 +4,11 @@
   "description": "Text Analyzer Tool",
   "main": "index.js",
   "scripts": {
-    "setup": "ts-node ./src/create-database.ts",
-    "start": "ts-node ./src/index.ts",
+    "setup-database": "ts-node ./src/create-database.ts",
+    "start": "nodemon ./src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clear": "npx sequelize-cli db:migrate:undo:all"
+    "clear": "npx sequelize-cli db:migrate:undo:all",
+    "setup": "bash setup.sh"
   },
   "keywords": [],
   "author": "",
