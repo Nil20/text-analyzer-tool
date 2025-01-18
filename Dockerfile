@@ -1,6 +1,9 @@
 # Use an official Node.js runtime as a parent image
 FROM node:18
 
+# Update and upgrade the package lists
+RUN apt-get update && apt-get upgrade -y
+
 # Set the working directory inside the container
 WORKDIR /usr/src/app
 
