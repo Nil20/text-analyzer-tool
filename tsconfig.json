@@ -12,8 +12,8 @@
     "src/**/*",
     "models",
     "index.ts",
-    "migrations",
-    "create-database.ts"
+    "src/migrations",
+    "src/create-database.ts"
   ],
   "exclude": ["node_modules"]
 }
