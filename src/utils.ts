@@ -1,3 +1,5 @@
+import Text from './models/text';
+
 export function getWordCount(content: string): number {
   return content.split(' ').length;
 }
@@ -25,4 +27,9 @@ export function getLongestWordsInParagraph(content: string): string[] {
 
 export function validateContent(content: any) {
   return typeof content === 'string' && content.trim() !== '';
+}
+
+export async function findTextById(id: number) {
+  const texts = await Text.findAll();
+  return texts.find((t) => t.id === id);
 }

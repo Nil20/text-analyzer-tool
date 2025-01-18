@@ -5,12 +5,22 @@ import {
   getNumberOfParagraphs,
   getLongestWordsInParagraph,
   validateContent,
+  findTextById,
 } from './utils';
+import Text from './models/text';
+
+jest.mock('./models/text', () => ({
+  findAll: jest.fn(),
+}));
 
 const demoString =
   'The quick brown fox jumps over the lazy dog. The lazy dog slept in the sun.';
 
 describe('Text Analysis Functions', () => {
+  beforeEach(() => {
+    (Text.findAll as jest.Mock).mockClear();
+  });
+
   test('getWordCount should return the correct word count', () => {
     expect(getWordCount(demoString)).toBe(16);
   });
@@ -42,5 +52,23 @@ describe('Text Analysis Functions', () => {
 
   test('validateContent should return false for a number', () => {
     expect(validateContent(123)).toBe(false);
+  });
+
+  it('should return the text object if found', async () => {
+    const mockText = { id: 1, content: 'This is a test' };
+
+    (Text.findAll as jest.Mock).mockResolvedValue([mockText]);
+
+    const result = await findTextById(1);
+    expect(result).toEqual(mockText);
+    expect(Text.findAll).toHaveBeenCalledWith();
+  });
+
+  it('should return undefined if text is not found', async () => {
+    (Text.findAll as jest.Mock).mockResolvedValue([]);
+
+    const result = await findTextById(999);
+    expect(result).toBeUndefined();
+    expect(Text.findAll).toHaveBeenCalledWith();
   });
 });
