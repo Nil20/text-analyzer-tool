@@ -9,7 +9,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "clear": "npx sequelize-cli db:migrate:undo:all",
-    "setup": "bash setup.sh"
+    "setup": "bash setup.sh",
+    "dev": "bash dev.sh"
   },
   "keywords": [],
   "author": "",
