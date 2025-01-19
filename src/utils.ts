@@ -13,7 +13,7 @@ export function getNumberOfSentences(content: string): number {
 }
 
 export function getNumberOfParagraphs(content: string): number {
-  return content.split('\n').length;
+  return content.split('\n').filter((p) => p.trim() !== '').length;
 }
 
 export function getLongestWordsInParagraph(content: string): string[] {

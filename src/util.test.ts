@@ -33,8 +33,10 @@ describe('Text Analysis Functions', () => {
     expect(getNumberOfSentences(demoString)).toBe(2);
   });
 
+  const demoStringParagraphs =
+    'I have a phd. \nI love it. \n\nAll the people love me too.';
   test('getNumberOfParagraphs should return the correct number of paragraphs', () => {
-    expect(getNumberOfParagraphs(demoString)).toBe(1);
+    expect(getNumberOfParagraphs(demoStringParagraphs)).toBe(3);
   });
 
   test('getLongestWordsInParagraph should return the longest word in each paragraph', () => {
