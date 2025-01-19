@@ -1,9 +1,6 @@
 # Use an official Node.js runtime as a parent image
 FROM node:18
 
-# Update and upgrade the package lists
-RUN apt-get update && apt-get upgrade -y
-
 # Set the working directory inside the container
 WORKDIR /usr/src/app
 
@@ -14,8 +11,8 @@ RUN npm install
 # Copy the rest of the application files
 COPY . .
 
-# Expose the port your app runs on
-EXPOSE 4000
+# Expose the port your Next.js app runs on
+EXPOSE 3000
 
-# Command to start the app
-CMD ["npm", "start"]
+# Command to start the Next.js development server
+CMD ["npm", "run", "dev"]
