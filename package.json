@@ -4,11 +4,11 @@
   "description": "Text Analyzer Tool",
   "main": "index.js",
   "scripts": {
-    "setup-database": "ts-node ./src/create-database.ts",
     "start": "nodemon ./src/index.ts",
     "test": "jest",
     "test:watch": "jest --watch",
-    "clear": "npx sequelize-cli db:migrate:undo:all",
+    "stop": "docker-compose down",
+    "clear": "docker-compose down --volumes",
     "setup": "bash setup.sh",
     "dev": "bash dev.sh"
   },
