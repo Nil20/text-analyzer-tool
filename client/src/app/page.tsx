@@ -1,5 +1,7 @@
 'use client';
 
+import TextAnalyzer from './TextAnalyzer';
+
 export default function Home() {
-  return <h1>New Home page</h1>;
+  return <TextAnalyzer />;
 }
