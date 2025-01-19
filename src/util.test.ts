@@ -26,11 +26,12 @@ describe('Text Analysis Functions', () => {
   });
 
   test('getCharacterCount should return the correct character count', () => {
-    expect(getCharacterCount(demoString)).toBe(75);
+    expect(getCharacterCount(demoString)).toBe(60);
   });
 
   test('getNumberOfSentences should return the correct number of sentences', () => {
-    expect(getNumberOfSentences(demoString)).toBe(2);
+    const sentenceString = 'Hey guys! I am John. ';
+    expect(getNumberOfSentences(sentenceString)).toBe(2);
   });
 
   const demoStringParagraphs =

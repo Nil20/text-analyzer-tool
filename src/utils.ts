@@ -1,15 +1,22 @@
 import Text from './models/text';
 
 export function getWordCount(content: string): number {
-  return content.split(' ').length;
+  return content.split(' ').filter((p) => p.trim() !== '').length;
 }
 
 export function getCharacterCount(content: string): number {
-  return content.length;
+  // counts punction characters
+  return content.split('').filter((p) => p.trim() !== '').length;
 }
 
 export function getNumberOfSentences(content: string): number {
-  return content.split('.').length - 1;
+  const punctuations = ['.', '!', '?'];
+  const res = content
+    .split(new RegExp(`[${punctuations.join('')}]`, 'g'))
+    .filter((p) => p.trim() !== '')
+    .filter(Boolean).length;
+
+  return res;
 }
 
 export function getNumberOfParagraphs(content: string): number {
