@@ -22,6 +22,22 @@ export default function Home() {
       >
         Go to Text Analyzer
       </Link>
+      <Link
+        href="/text-list"
+        style={{
+          marginLeft: '20px',
+          padding: '10px 20px',
+          fontSize: '16px',
+          backgroundColor: '#007BFF',
+          color: 'white',
+          border: 'none',
+          borderRadius: '4px',
+          textDecoration: 'none',
+          cursor: 'pointer',
+        }}
+      >
+        Go to Text List
+      </Link>
     </div>
   );
 }
