@@ -8,7 +8,7 @@ RUN apt-get update && apt-get upgrade -y
 WORKDIR /usr/src/app
 
 # Copy package.json and install dependencies
-COPY package*.json ./
+COPY package.json package-lock.json ./
 RUN npm install
 
 # Copy the rest of the application files
